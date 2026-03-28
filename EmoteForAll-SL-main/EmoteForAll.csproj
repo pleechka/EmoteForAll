@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F1FFC7B2-3E33-4610-B1C1-AEC973EFA33F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EmoteForAll</RootNamespace>
+    <AssemblyName>EmoteForAll</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <LangVersion>latest</LangVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Classes\EmoteHandler.cs" />
+    <Compile Include="Commands\EmoteCommand.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="EmoteForAll.cs" />
+    <Compile Include="Handlers\PlayerHandler.cs" />
+    <Compile Include="Patches\Emote3114.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Types\Scp3114DanceType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- lib\ — файлы которые ты положил вручную -->
+    <Reference Include="0Harmony">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Mono.Posix">
+      <HintPath>lib\Mono.Posix.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="SemanticVersioning">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\SemanticVersioning.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="ProjectMER">
+      <HintPath>lib\ProjectMER.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <!-- Dedicated Server — D:\SteamLibrary\...\SCPSL_Data\Managed\ -->
+    <Reference Include="Assembly-CSharp">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\SteamLibrary\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\SteamLibrary\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Mirror">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\SteamLibrary\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\Mirror.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="PluginAPI">
+      <HintPath>D:\SteamLibrary\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\PluginAPI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Pooling">
+      <HintPath>D:\SteamLibrary\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\Pooling.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>D:\SteamLibrary\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>D:\SteamLibrary\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AIModule">
+      <HintPath>D:\SteamLibrary\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\UnityEngine.AIModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <!-- %AppData%\Roaming\EXILED\Plugins\ -->
+    <Reference Include="Exiled.Updater">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(AppData)\EXILED\Plugins\Exiled.Updater.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <!-- NuGet пакет ExMod.Exiled -->
+    <Reference Include="CommandSystem.Core">
+      <HintPath>packages\ExMod.Exiled.9.13.3\lib\net48\CommandSystem.Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Exiled.API">
+      <HintPath>packages\ExMod.Exiled.9.13.3\lib\net48\Exiled.API.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Exiled.CreditTags">
+      <HintPath>packages\ExMod.Exiled.9.13.3\lib\net48\Exiled.CreditTags.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Exiled.CustomItems">
+      <HintPath>packages\ExMod.Exiled.9.13.3\lib\net48\Exiled.CustomItems.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Exiled.CustomRoles">
+      <HintPath>packages\ExMod.Exiled.9.13.3\lib\net48\Exiled.CustomRoles.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Exiled.Events">
+      <HintPath>packages\ExMod.Exiled.9.13.3\lib\net48\Exiled.Events.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Exiled.Loader">
+      <HintPath>packages\ExMod.Exiled.9.13.3\lib\net48\Exiled.Loader.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Exiled.Permissions">
+      <HintPath>packages\ExMod.Exiled.9.13.3\lib\net48\Exiled.Permissions.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="LabApi">
+      <HintPath>packages\ExMod.Exiled.9.13.3\lib\net48\LabApi.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="NorthwoodLib">
+      <HintPath>packages\ExMod.Exiled.9.13.3\lib\net48\NorthwoodLib.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="YamlDotNet">
+      <HintPath>packages\ExMod.Exiled.9.13.3\lib\net48\YamlDotNet.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <!-- Стандартные системные -->
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
