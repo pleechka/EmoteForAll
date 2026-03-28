@@ -1,6 +1,0 @@
-D:\EmoteForAll-SL-main\bin\Debug\EmoteForAll.dll
-D:\EmoteForAll-SL-main\bin\Debug\EmoteForAll.pdb
-D:\EmoteForAll-SL-main\obj\Debug\EmoteForAll.csproj.AssemblyReference.cache
-D:\EmoteForAll-SL-main\obj\Debug\EmoteForAll.csproj.CoreCompileInputs.cache
-D:\EmoteForAll-SL-main\obj\Debug\EmoteForAll.dll
-D:\EmoteForAll-SL-main\obj\Debug\EmoteForAll.pdb
