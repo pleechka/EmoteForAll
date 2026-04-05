@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("EmoteForAll")]
 [assembly: AssemblyDescription("Allows players to Emote using .emote")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("creepycats")]
+[assembly: AssemblyCompany("pleechka")]
 [assembly: AssemblyProduct("EmoteForAll")]
-[assembly: AssemblyCopyright("Copyright ©  2023")]
+[assembly: AssemblyCopyright("Copyright ©  2026")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
